@@ -1,0 +1,70 @@
+@import 'normalize';
+@import 'variables';
+
+@font-face {
+  font-family: 'Muli';
+  font-weight: 400;
+  font-style: normal;
+  src: url('../static/fonts/Muli-regular.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Muli';
+  font-weight: 600;
+  font-style: normal;
+  src: url('../static/fonts/Muli-600.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Muli';
+  font-weight: 400;
+  font-style: italic;
+  src: url('../static/fonts/Muli-italic.woff2') format('woff2');
+}
+
+h1, h2, h3, h4, h5, h6, p, button, a {
+  font-family: 'Muli', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  color: $textColor;
+}
+
+.inverse {
+  color: $textColorInverse;
+}
+
+h1 {
+  font-weight: 600;
+  font-size: 24px;
+	letter-spacing: 0.4px;
+  text-align: center;  
+}
+
+h2 {
+  font-weight: 600;
+  font-size: 18px;
+  text-align: center;
+  color: $textColor;
+}
+
+button.btn {
+	font-size: 18px;
+	font-weight: 600;
+	letter-spacing: 0.3px;
+	text-align: center;
+	color: $textColorInverse;
+  padding: 12px;
+  background-color: $blue;
+  border-radius: 3px;
+}
+
+button.btn-reset {
+  padding: 0;
+  margin: 0;
+}
+
+html, body, #app-root {
+  width: 100%;
+  height: 100%;
+}
