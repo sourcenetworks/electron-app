@@ -1,15 +1,16 @@
 process.env.NODE_ENV = process.env.NODE_ENV || 'production';
 
-const path = require('path');
 const electron = require('electron');
 const menubar = require('menubar');
+const initIpc = require('./ipc/init');
+const trayIcon = require('./constants/trayIcons').initial;
 
 const BrowserWindow = electron.BrowserWindow;
 const isDevelopment = process.env.NODE_ENV === 'development';
 
 const mb = menubar({
   dir: __dirname,
-  icon: path.join(__dirname, '/Icon-Template.png'),
+  icon: trayIcon,
   preloadWindow: true,
   alwaysOnTop: isDevelopment,
   transparent: true,
@@ -17,7 +18,10 @@ const mb = menubar({
   hasShadow: false,
   width: 350,
   height: 420,
+});
 
+initIpc({
+  menubar: mb,
 });
 
 mb.on('ready', () => {

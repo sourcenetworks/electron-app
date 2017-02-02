@@ -59,6 +59,7 @@
     }
 
     .gear-button {
+      cursor: default;
       img {
         width: $gearButtonWidth;
         height: $gearButtonHeight;
