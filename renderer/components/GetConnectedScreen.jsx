@@ -71,7 +71,7 @@ export default function GetConnectedScreen({ connectionStatus, beginConnectionSe
           <h1>{isOffline(connectionStatus) ? 'Offline' : 'You’re connected!'}</h1>
           <h4>
             {
-              isOffline ?
+              isOffline(connectionStatus) ?
               'You’re not currently connected to Source wifi.' :
               'We’ve connected you to a Source host nearby. Happy surfing!'
             }

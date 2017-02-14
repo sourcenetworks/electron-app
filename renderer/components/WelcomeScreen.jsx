@@ -15,7 +15,7 @@ export default function WelcomeScreen({ dismiss }) {
       <ScreenContent>
         <div className="welcome-screen">
           <h1>Welcome to Source</h1>
-          <h2>Soon we’ll have a NUX on this screen. But for now...</h2>
+          <h2> we’ll have a NUX on this screen. But for now...</h2>
           <button onClick={dismiss} className="btn">Get Started</button>
         </div>
       </ScreenContent>

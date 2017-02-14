@@ -21,9 +21,10 @@ config.module.loaders.push({
   loaders: ['style-loader', 'css-loader', 'resolve-url-loader', 'sass-loader?sourceMap'],
 });
 
-
 config.plugins.push(
   new webpack.HotModuleReplacementPlugin(),
+  // new webpack.IgnorePlugin(/mock-firmata/),
+  // new webpack.ContextReplacementPlugin(/bindings$/, /^$/),
   new webpack.NoErrorsPlugin(),
   new webpack.DefinePlugin({
     __DEV__: true,
