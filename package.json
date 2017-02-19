@@ -66,6 +66,7 @@
   "dependencies": {
     "bluebird": "^3.4.7",
     "electron": "^1.4.15",
+    "electron-promise-ipc": "^0.0.2",
     "lodash": "^4.17.4",
     "menubar": "^5.2.0",
     "react": "^0.14.7",
