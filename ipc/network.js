@@ -5,7 +5,7 @@ const Source = require('source-background-lib').default;
 module.exports = (config) => {
 
   // Assumes networks are written as `Source-XX` where XX is the price of the network
-  const getCheapestSourceNetwork = (networks) => {
+  const getLowestCostNetwork = (networks) => {
     return networks.map(net => Number(net.split('-')[1]))
     .then(Math.min.apply(Math));
   }
@@ -14,7 +14,7 @@ module.exports = (config) => {
     switch (action) {
       case 'connect':
         return Source.getSourceNetworksInRange()
-        .then(getCheapestSourceNetwork)
+        .then(getLowestCostNetwork)
         .then(price => Source.createSession(`Source-${price}`));
         break;
       case 'disconnect':
