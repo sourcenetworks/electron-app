@@ -2099,13 +2099,12 @@ electron-positioner@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/electron-positioner/-/electron-positioner-3.0.0.tgz#1a3b75c9cc1e29dd37c663b23fd876d4ffab9996"
 
-electron-promise-ipc@^0.0.2:
-  version "0.0.2"
-  resolved "https://registry.yarnpkg.com/electron-promise-ipc/-/electron-promise-ipc-0.0.2.tgz#555f0bef3fcbf4f32829e1fcb9b5a38e1785dae6"
+electron-promise-ipc@^0.0.4:
+  version "0.0.4"
+  resolved "https://registry.yarnpkg.com/electron-promise-ipc/-/electron-promise-ipc-0.0.4.tgz#f65ae045f168c71f7af340f3341375d63cc5a8d1"
   dependencies:
     bluebird "^3.4.7"
     is-electron-renderer "^2.0.1"
-    sinon "^1.17.7"
     uuid "^3.0.1"
 
 electron-to-chromium@^1.2.0:
@@ -5398,7 +5397,7 @@ single-line-log@^1.1.2:
   dependencies:
     string-width "^1.0.1"
 
-sinon@^1.17.3, sinon@^1.17.7:
+sinon@^1.17.3:
   version "1.17.7"
   resolved "https://registry.yarnpkg.com/sinon/-/sinon-1.17.7.tgz#4542a4f49ba0c45c05eb2e9dd9d203e2b8efe0bf"
   dependencies:
