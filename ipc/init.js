@@ -1,6 +1,8 @@
 const { ipcMain } = require('electron');
 const { connected, disconnected } = require('../constants/trayIcons');
 
+const networkRoutes = require('./network');
+
 module.exports = ({ menubar }) => {
   ipcMain.on('connectedStatusChange', (event, status) => {
     switch (status) {
@@ -14,4 +16,6 @@ module.exports = ({ menubar }) => {
         throw new Error(`Unrecognized connection status ${status}`);
     }
   });
+
+  networkRoutes();
 };

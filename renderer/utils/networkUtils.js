@@ -1,11 +1,9 @@
-import Promise from 'bluebird';
+import promiseIpc from 'electron-promise-ipc';
 
 export function connectToSourceNetwork() {
-  // fake it for now!
-  return Promise.resolve('connected to network').delay(4000);
+  return promiseIpc.send('sourceNetworkingAction', 'connect');
 }
 
 export function disconnectFromNetwork() {
-  // fake it for now!
-  return Promise.resolve('disconnected from network').delay(2000);
+  return promiseIpc.send('sourceNetworkingAction', 'disconnect');
 }
