@@ -3,7 +3,6 @@ const promiseIpc = require('electron-promise-ipc').default;
 const Source = require('source-background-lib').default;
 
 module.exports = (config) => {
-  console.log(Source, promiseIpc);
   // Assumes networks are written as `Source-XX` where XX is the price of the network
   const getLowestCostNetwork = (networks) => {
     const nets = networks.map(net => {
