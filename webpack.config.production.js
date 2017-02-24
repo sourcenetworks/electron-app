@@ -18,7 +18,7 @@ config.module.loaders.push({
   test: /\.global\.css$/,
   loader: ExtractTextPlugin.extract(
     'style-loader',
-    'css-loader',
+    'css-loader'
   )
 }, {
   test: /^((?!\.global).)*\.css$/,

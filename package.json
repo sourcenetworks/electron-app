@@ -1,5 +1,5 @@
 {
-  "name": "source-client",
+  "name": "@sourcenetworks/electron-app",
   "version": "0.0.1",
   "description": "source client",
   "main": "main.js",
@@ -22,6 +22,7 @@
   "author": "Source Co.",
   "license": "UNLICENSED",
   "devDependencies": {
+    "@sourcenetworks/background-lib": "0.0.2",
     "asar": "^0.10.0",
     "babel-core": "^6.2.4",
     "babel-loader": "^6.2.4",
