@@ -1,4 +1,3 @@
-const Promise = require('bluebird');
 const promiseIpc = require('electron-promise-ipc').default;
 const Source = require('@sourcenetworks/background-lib').default;
 
