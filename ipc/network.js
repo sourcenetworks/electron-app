@@ -1,6 +1,6 @@
 const Promise = require('bluebird');
 const promiseIpc = require('electron-promise-ipc').default;
-const Source = require('source-background-lib').default;
+const Source = require('@sourcenetworks/background-lib').default;
 
 module.exports = (config) => {
   // Assumes networks are written as `Source-XX` where XX is the price of the network
