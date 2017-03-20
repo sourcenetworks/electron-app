@@ -4,15 +4,16 @@ import * as screenNames from '../constants/screenNames';
 import screenNamePropType from '../propTypes/screenNamePropType';
 import WelcomeScreenContainer from './WelcomeScreenContainer';
 import GetConnectedScreenContainer from './GetConnectedScreenContainer';
+import HubContainer from './HubContainer';
 
 // screenName -> Screen container component to render
 const screenContainerComponent = {
   [screenNames.WELCOME]: WelcomeScreenContainer,
   [screenNames.GET_CONNECTED]: GetConnectedScreenContainer,
+  [screenNames.HUB]: HubContainer,
 };
 
-function App(props) {
-  const { currentScreen } = props;
+function App({ currentScreen }) {
   const ScreenComponent = screenContainerComponent[currentScreen];
   return <ScreenComponent />;
 }

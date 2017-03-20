@@ -79,8 +79,8 @@
     border-top-left-radius: 4px;
 
     &.shadow {
+      box-shadow: 0 -1px 7px 2px rgba(0,0,0,.16);
       z-index: -1; // behind screen content container
-      box-shadow: 0px -1px 7px 2px rgba(0,0,0,0.16);
     }
   }
 }
@@ -90,9 +90,15 @@
   position: absolute;
   top: 20px;
   padding-top: $headerHeight - 20px;
+  padding-left: 20px;
+  padding-right: 20px;
   bottom: 10px;
   left: 10px;
   border-radius: 10px;
   right: 10px;
   box-shadow: 0px -1px 7px 2px rgba(0,0,0,0.16);
+}
+
+.fa-check {
+  color: $blue
 }
