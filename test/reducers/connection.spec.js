@@ -1,7 +1,7 @@
 import { LIFECYCLE } from 'redux-pack';
 import { expect } from 'chai';
 import connection from '../../renderer/reducers/connectionReducer';
-import { SCAN_AND_CONNECT, DISCONNECT } from '../../renderer/constants/connectionActionTypes';
+import { SCAN_AND_CONNECT, DISCONNECT } from '../../renderer/actions/actionTypes';
 import * as status from '../../renderer/constants/connectionStatus';
 import makePackAction from './makePackAction';
 

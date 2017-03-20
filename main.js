@@ -18,6 +18,8 @@ const mb = menubar({
   hasShadow: false,
   width: 350,
   height: 420,
+  x: 0,
+  y: 0,
 });
 
 initIpc({
@@ -29,7 +31,7 @@ mb.on('ready', () => {
     /* eslint-disable no-console, global-require, import/no-extraneous-dependencies */
     const devToolsInstaller = require('electron-devtools-installer');
     const installExtension = devToolsInstaller.default;
-    const REACT_DEVELOPER_TOOLS = devToolsInstaller.REACT_DEVELOPER_TOOLS;
+    const { REACT_DEVELOPER_TOOLS } = devToolsInstaller;
 
     BrowserWindow.removeDevToolsExtension('RemoteDev DevTools');
     BrowserWindow.addDevToolsExtension('node_modules/remotedev-extension/dist');

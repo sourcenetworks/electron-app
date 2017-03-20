@@ -1,5 +1,5 @@
 import { handle } from 'redux-pack';
-import * as types from '../constants/connectionActionTypes';
+import * as types from '../actions/actionTypes';
 import * as status from '../constants/connectionStatus';
 
 const initialConnectionState = {
