@@ -1,7 +1,4 @@
-// I don't know if any of this really works. It's from another package.
-/* eslint-disable */
 const webpack = require('webpack');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const webpackTargetElectronRenderer = require('webpack-target-electron-renderer');
 const baseConfig = require('./webpack.config.base');
 
@@ -10,22 +7,11 @@ const config = Object.create(baseConfig);
 
 config.devtool = 'source-map';
 
-config.entry = './app/index';
-
-config.output.publicPath = '../dist/';
+config.entry = './renderer/index.jsx';
 
 config.module.loaders.push({
-  test: /\.global\.css$/,
-  loader: ExtractTextPlugin.extract(
-    'style-loader',
-    'css-loader',
-  )
-}, {
-  test: /^((?!\.global).)*\.css$/,
-  loader: ExtractTextPlugin.extract(
-    'style-loader',
-    'css-loader?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]'
-  )
+  test: /\.scss$/,
+  loaders: ['style-loader', 'css-loader', 'resolve-url-loader', 'sass-loader?sourceMap'],
 });
 
 config.plugins.push(
@@ -41,8 +27,7 @@ config.plugins.push(
       screw_ie8: true,
       warnings: false
     }
-  }),
-  new ExtractTextPlugin('style.css', { allChunks: true })
+  })
 );
 
 config.target = webpackTargetElectronRenderer(config);

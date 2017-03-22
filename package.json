@@ -12,9 +12,9 @@
     "build": "cross-env NODE_ENV=production webpack --config webpack.config.production.js --progress --profile --colors",
     "start": "cross-env NODE_ENV=production electron ./",
     "start-hot": "cross-env HOT=1 NODE_ENV=development electron ./",
-    "package": "cross-env NODE_ENV=production node package.js",
+    "dev": "concurrently --kill-others \"npm run hot-server\" \"npm run start-hot\"",
     "package-all": "npm run package -- --all",
-    "dev": "concurrently --kill-others \"npm run hot-server\" \"npm run start-hot\""
+    "webpack:prod": "webpack --config webpack.config.production.js"
   },
   "bin": {
     "electron": "./node_modules/.bin/electron"
@@ -36,7 +36,7 @@
     "del": "^2.2.0",
     "electron-debug": "^0.5.2",
     "electron-devtools-installer": "^2.1.0",
-    "electron-packager": "^6.0.0",
+    "electron-packager": "^6.0.2",
     "eslint": "^3.14.1",
     "eslint-config-airbnb": "^14.0.0",
     "eslint-plugin-import": "^2.2.0",
@@ -59,7 +59,7 @@
     "sass-loader": "^4.1.1",
     "sinon": "^1.17.3",
     "style-loader": "^0.13.1",
-    "webpack": "^1.12.14",
+    "webpack": "^1.14.0",
     "webpack-dev-middleware": "^1.6.1",
     "webpack-hot-middleware": "^2.10.0",
     "webpack-target-electron-renderer": "^0.4.0"
@@ -68,6 +68,7 @@
     "bluebird": "^3.4.7",
     "electron": "^1.4.15",
     "electron-promise-ipc": "^0.0.4",
+    "@sourcenetworks/background-lib": "0.0.2",
     "lodash": "^4.17.4",
     "menubar": "^5.2.0",
     "react": "^0.14.7",
