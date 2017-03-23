@@ -18,9 +18,8 @@ const mb = menubar({
   hasShadow: false,
   width: 350,
   height: 420,
-  // x: 0,
-  // y: 0,
-  // Uncomment for dev
+  x: 0,
+  y: 0,
 });
 
 initIpc({

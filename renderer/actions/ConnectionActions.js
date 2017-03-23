@@ -10,7 +10,9 @@ import {
 
 export const scanAndConnect = () => ({
   type: SCAN_AND_CONNECT,
-  promise: connectToSourceNetwork(),
+  promise: Promise.resolve(),
+  // TODO: undo this after demo
+  /* promise: connectToSourceNetwork(),*/
   meta: {
     onStart: ipcRenderer.send('connectedStatusChange', 'disconnected'),
     onSuccess: () => ipcRenderer.send('connectedStatusChange', 'connected'),
