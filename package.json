@@ -65,10 +65,10 @@
     "webpack-target-electron-renderer": "^0.4.0"
   },
   "dependencies": {
+    "@sourcenetworks/background-lib": "0.0.2",
     "bluebird": "^3.4.7",
     "electron": "^1.4.15",
     "electron-promise-ipc": "^0.0.4",
-    "@sourcenetworks/background-lib": "0.0.2",
     "lodash": "^4.17.4",
     "menubar": "^5.2.0",
     "react": "^0.14.7",
@@ -78,6 +78,7 @@
     "redux": "^3.3.1",
     "redux-pack": "^0.1.4",
     "redux-thunk": "^2.0.1",
-    "styled-components": "^1.4.4"
+    "styled-components": "^1.4.4",
+    "webpack-encoding-plugin": "^0.2.1"
   }
 }
