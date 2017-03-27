@@ -12,9 +12,10 @@
     "build": "cross-env NODE_ENV=production webpack --config webpack.config.production.js --progress --profile --colors",
     "start": "cross-env NODE_ENV=production electron ./",
     "start-hot": "cross-env HOT=1 NODE_ENV=development electron ./",
-    "dev": "concurrently --kill-others \"npm run hot-server\" \"npm run start-hot\"",
+    "dev": "concurrently --kill-others \"npm run webpack:dev\" \"npm run hot-server\" \"npm run start-hot\"",
     "package-all": "npm run package -- --all",
-    "webpack:prod": "webpack --config webpack.config.production.js"
+    "webpack:prod": "webpack --config webpack.config.production.js",
+    "webpack:dev": "webpack --config webpack.config.development.js"
   },
   "bin": {
     "electron": "./node_modules/.bin/electron"
@@ -79,11 +80,6 @@
     "redux": "^3.3.1",
     "redux-pack": "^0.1.4",
     "redux-thunk": "^2.0.1",
-<<<<<<< HEAD
-    "styled-components": "^1.4.4",
-    "webpack-encoding-plugin": "^0.2.1"
-=======
     "styled-components": "^1.4.4"
->>>>>>> baa5596c1141c1ba26b66f0889363fef161830eb
   }
 }
