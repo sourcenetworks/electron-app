@@ -71,7 +71,6 @@ function ToolTip() {
   );
 }
 
-
 export default function ReferralFooter() {
   const referralURL = 'www.sourcewifi.com/123';
   return (

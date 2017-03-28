@@ -5,17 +5,14 @@ import Screen from './Screen';
 import SimpleHeader from './SimpleHeader';
 import ScreenContent from './ScreenContent';
 import Button from './Button';
+import LoginForm from './LoginForm';
 
 const propTypes = {
   dismiss: PropTypes.func.isRequired,
 };
 
 const WelcomeScreenH1 = styled.h1`
-  margin: 40px 0;
-`;
-
-const WelcomeScreenH2 = styled.h2`
-  margin-bottom: 40px;
+  margin: 20px 0;
 `;
 
 const WelcomeScreenContent = styled.div`
@@ -33,9 +30,7 @@ export default function WelcomeScreen({ dismiss }) {
           <WelcomeScreenH1>
             Welcome to Source
           </WelcomeScreenH1>
-          <WelcomeScreenH2>
-            Soon we’ll have a NUX on this screen. But for now...
-          </WelcomeScreenH2>
+          <LoginForm />
           <Button onClick={dismiss}>Get started</Button>
         </WelcomeScreenContent>
       </ScreenContent>

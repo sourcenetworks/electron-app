@@ -12,7 +12,7 @@ const onClick = function popupSettingsMenu() {
       role: 'help',
       label: 'Help Center',
       click() {
-        // TODO: We need a help center page for our app. It should be whiteliste by our routers!
+        // @TODO: We need a help center page for our app. It should be whiteliste by our routers!
         remote.shell.openExternal('https://www.youtube.com/watch?v=dQw4w9WgXcQ');
       },
     },
