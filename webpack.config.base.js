@@ -10,14 +10,18 @@ module.exports = {
       test: /\.json$/,
       loader: 'json-loader',
     }, {
-      test: /\.(jpe?g|png|gif|svg|woff2)$/i,
-      loader: 'file-loader?name=[name].[ext]',
+      test: /\.(jpe?g|png|gif|svg)$/,
+      loader: 'file-loader?name=/static/img/[name].[ext]',
+    }, {
+      test: /\.woff2$/,
+      loader: 'file-loader?name=/static/fonts/[name].[ext]',
     }],
   },
   output: {
     path: path.join(__dirname, 'dist'),
     filename: 'bundle.js',
     libraryTarget: 'commonjs2',
+    publicPath: path.join(__dirname, 'dist'),
   },
   resolve: {
     extensions: ['', '.js', '.jsx'],

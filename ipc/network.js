@@ -11,7 +11,7 @@ module.exports = (config) => {
 
     const lowest = Math.min.apply(Math, nets);
     return lowest;
-  }
+  };
 
   promiseIpc.on('sourceNetworkingAction', (action) => {
     switch (action) {
@@ -19,11 +19,10 @@ module.exports = (config) => {
         return Source.getSourceNetworksInRange()
         .then(getLowestCostNetwork)
         .then(price => Source.createSession(`Source-${price}`));
-        break;
       case 'disconnect':
         return Source.disconnectSession();
       default:
-        break;
+        return null;
     }
   });
 };

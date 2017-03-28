@@ -14,7 +14,7 @@ const propTypes = {
   beginConnectionSearch: PropTypes.func,
 };
 
-function imageOfStatus(connectionStatus) {
+function ImageOfStatus({ connectionStatus }) {
   switch (connectionStatus) {
     case OFFLINE:
       return <img alt="Not connected" src={notConnectedImgPath} />;
@@ -59,16 +59,24 @@ export function ConnectionButton({ connectionStatus, beginConnectionSearch }) {
 
 ConnectionButton.propTypes = propTypes;
 
-export default function GetConnectedScreen({ connectionStatus, beginConnectionSearch }) {
+export default function GetConnectedScreen({
+  connectionStatus,
+  beginConnectionSearch,
+  switchToHub,
+}) {
   return (
     <Screen>
       <SimpleHeader />
       <ScreenContent>
         <div className="get-connected-screen">
           <div className="image-container">
-            {imageOfStatus(connectionStatus)}
+            <ImageOfStatus connectionStatus={connectionStatus} />
           </div>
-          <h1>{isOffline(connectionStatus) ? 'Offline' : 'You’re connected!'}</h1>
+
+          <h1>
+            {isOffline(connectionStatus) ? 'Offline' : 'You’re connected!'}
+          </h1>
+
           <h4>
             {
               isOffline ?
@@ -76,14 +84,19 @@ export default function GetConnectedScreen({ connectionStatus, beginConnectionSe
               'We’ve connected you to a Source host nearby. Happy surfing!'
             }
           </h4>
+
           <ConnectionButton
             connectionStatus={connectionStatus}
             beginConnectionSearch={beginConnectionSearch}
           />
+
           {connectionStatus === CONNECTED && (
-            <button className="btn-reset go-to-overview">
-              No thanks, just take me to the overview
-            </button>
+            <button
+              className="btn-reset go-to-overview"
+              onClick={switchToHub}
+            >
+             No thanks, just take me to the overview
+           </button>
           )}
         </div>
       </ScreenContent>

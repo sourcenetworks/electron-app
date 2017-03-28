@@ -1,7 +1,7 @@
 const webpack = require('webpack');
 const webpackTargetElectronRenderer = require('webpack-target-electron-renderer');
 const baseConfig = require('./webpack.config.base');
-
+const path = require('path');
 
 const config = Object.create(baseConfig);
 
@@ -9,7 +9,7 @@ config.devtool = 'source-map';
 
 config.entry = './renderer/index.jsx';
 
-config.output.publicPath = '../dist/';
+config.output.publicPath = path.join(__dirname, 'dist');
 
 config.module.loaders.push({
   test: /\.scss$/,

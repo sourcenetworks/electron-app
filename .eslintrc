@@ -5,6 +5,7 @@
     "es6": true
   },
   "rules": {
-    "comma-dangle": 0
+    "comma-dangle": 0,
+    "no-confusing-arrow": 0
   }
 }

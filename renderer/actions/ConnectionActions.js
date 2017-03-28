@@ -1,10 +1,18 @@
 import { ipcRenderer } from 'electron';
-import * as types from '../constants/connectionActionTypes';
-import { connectToSourceNetwork, disconnectFromNetwork } from '../utils/networkUtils';
+import {
+  SCAN_AND_CONNECT,
+  DISCONNECT,
+} from '../actions/actionTypes';
+import {
+  connectToSourceNetwork,
+  disconnectFromNetwork,
+} from '../utils/networkUtils';
 
 export const scanAndConnect = () => ({
-  type: types.SCAN_AND_CONNECT,
-  promise: connectToSourceNetwork(),
+  type: SCAN_AND_CONNECT,
+  promise: Promise.resolve(),
+  // TODO: undo this after demo
+  /* promise: connectToSourceNetwork(),*/
   meta: {
     onStart: ipcRenderer.send('connectedStatusChange', 'disconnected'),
     onSuccess: () => ipcRenderer.send('connectedStatusChange', 'connected'),
@@ -13,7 +21,7 @@ export const scanAndConnect = () => ({
 });
 
 export const disconnect = () => ({
-  type: types.DISCONNECT,
+  type: DISCONNECT,
   promise: disconnectFromNetwork(),
   meta: {
     onStart: ipcRenderer.send('connectedStatusChange', 'disconnected'),

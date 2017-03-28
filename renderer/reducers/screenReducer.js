@@ -1,4 +1,4 @@
-import * as types from '../constants/screenActionTypes';
+import * as types from '../actions/actionTypes';
 import { WELCOME } from '../constants/screenNames';
 
 // state is an enum, not an object
