@@ -1,9 +1,7 @@
-// import Manager from 'ethereum-manager';
 import styled from 'styled-components';
 import React, { Component, PropTypes} from 'react';
 import Button from './Button.jsx';
-
-        // @todo: need to include ethereum-manager
+// const Source = require('@sourcenetworks/background-lib').default;
 
 const H2 = styled.h2`
   margin-bottom: 10px;
@@ -36,9 +34,6 @@ const Form = styled.form`
 //     passwordInput: PropTypes.string
 // };
 
-
-
-
 export default class LoginForm extends Component {
 
   constructor(props){
@@ -53,8 +48,13 @@ export default class LoginForm extends Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    console.log("This is the username: " + this.state.userNameInput);
-    console.log("This is the password: " + this.state.passwordInput);
+    if (e/* Source.isNewUser()*/) {
+      // var newSeed = Source.generateMnemonic();
+      // console.log("This is the new seed you've gotten: " + newSeed(pass));
+      console.log("This is the username: " + this.state.userNameInput);
+      console.log("This is the password: " + this.state.passwordInput);
+
+    }
     // @Todo: Dismiss
     // Refer to ethereum-manager
     // @todo: Create an action that sends encrypts password, also sends to cloud?
