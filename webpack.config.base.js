@@ -11,10 +11,10 @@ module.exports = {
       loader: 'json-loader',
     }, {
       test: /\.(jpe?g|png|gif|svg)$/i,
-      loader: 'file-loader?name=/static/img/[name].[ext]',
+      loader: 'url-loader',
     }, {
       test: /\.woff2$/,
-      loader: 'file-loader?name=/static/fonts/[name].[ext]',
+      loader: 'url-loader',
     }],
   },
   output: {

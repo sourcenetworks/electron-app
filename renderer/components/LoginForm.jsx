@@ -4,9 +4,8 @@ import Button from './Button.jsx';
 import { getNewMnemonic } from '../utils/walletUtils';
 
 const propTypes = {
-  dismiss: PropTypes.func.isRequired
+  dismiss: PropTypes.func.isRequired,
 }
-
 
 const H2 = styled.h2`
   margin-bottom: 10px;
@@ -55,7 +54,7 @@ export default class LoginForm extends Component {
 
     console.log("This is the mnemonic string: " + litty);
 
-    dismiss;
+    /* dismiss;*/
 
     // @Todo: Dismiss -> this function currently lives in the WelcomeSreenContainer
   }
@@ -67,16 +66,16 @@ export default class LoginForm extends Component {
               Enter a username and password
           </H2>
           <Input
-              type="text"
-              placeholder="Bob"
-              value={this.state.usernameInput}
-              onChange={(e) => this.setState({usernameInput: e.target.value})}
+            type="text"
+            placeholder="Bob"
+            value={this.state.usernameInput}
+            onChange={(e) => this.setState({usernameInput: e.target.value})}
           />
           <Input
-              type="password"
-              placeholder="password"
-              value={this.state.passwordInput}
-              onChange={(e) => this.setState({passwordInput: e.target.value})}
+            type="password"
+            placeholder="password"
+            value={this.state.passwordInput}
+            onChange={(e) => this.setState({passwordInput: e.target.value})}
           />
           <Button onClick={this.handleSubmit}>{"Let's go"}</Button>
           { /* @todo: Create New Button Class that actually saves the form field to the data base. */}
