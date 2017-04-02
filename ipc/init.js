@@ -2,6 +2,7 @@ const { ipcMain } = require('electron');
 const { connected, disconnected } = require('../constants/trayIcons');
 
 const networkRoutes = require('./network');
+const wallet = require('./wallet');
 
 module.exports = ({ menubar }) => {
   ipcMain.on('connectedStatusChange', (event, status) => {
@@ -17,5 +18,6 @@ module.exports = ({ menubar }) => {
     }
   });
 
+  wallet();
   networkRoutes();
 };
