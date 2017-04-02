@@ -1,10 +1,12 @@
-// import Manager from 'ethereum-manager';
 import styled from 'styled-components';
 import React, { Component, PropTypes} from 'react';
 import Button from './Button.jsx';
 import { getNewMnemonic } from '../utils/walletUtils';
 
-        // @todo: need to include ethereum-manager
+const propTypes = {
+  dismiss: PropTypes.func.isRequired
+}
+
 
 const H2 = styled.h2`
   margin-bottom: 10px;
@@ -52,6 +54,8 @@ export default class LoginForm extends Component {
     var litty = getNewMnemonic(this.state.passwordInput);
 
     console.log("This is the mnemonic string: " + litty);
+
+    dismiss;
 
     // @Todo: Dismiss -> this function currently lives in the WelcomeSreenContainer
   }

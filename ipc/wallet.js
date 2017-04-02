@@ -1,13 +1,13 @@
-import Promise from 'bluebird';
-import * as Source from "@sourcenetworks/background-lib";
-import promiseIpc from "electron-promise-ipc";
+const Promise = require('bluebird');
+const Source = require('@sourcenetworks/background-lib').default;
+const promiseIpc = require('electron-promise-ipc').default;
 
-module.export = (config) => {
+module.exports = (config) => {
 
     promiseIpc.on('createAccount', (password) => {
-        console.log('This is the password passed to whatever' + password); // This should be a string
-        return Source.getMnemonic(); // @todo: change getMnemonic to actually take a password
-
+        return Source.generateMnemonic()
+            .then(mnemonic => console.log(mnemonic));
+        // @todo: change getMnemonic to actually take a password
         // should return a string with the 12 word mnemonic
-    }
+    });
 };
