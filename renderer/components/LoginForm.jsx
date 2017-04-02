@@ -2,6 +2,7 @@
 import styled from 'styled-components';
 import React, { Component, PropTypes} from 'react';
 import Button from './Button.jsx';
+import { getNewMnemonic } from '../utils/walletUtils';
 
         // @todo: need to include ethereum-manager
 
@@ -31,14 +32,6 @@ const Form = styled.form`
   background: white;
 `;
 
-// const propTypes = {
-//     userNameInput: PropTypes.string,
-//     passwordInput: PropTypes.string
-// };
-
-
-
-
 export default class LoginForm extends Component {
 
   constructor(props){
@@ -53,17 +46,19 @@ export default class LoginForm extends Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    console.log("This is the username: " + this.state.userNameInput);
-    console.log("This is the password: " + this.state.passwordInput);
-    // @Todo: Dismiss
-    // Refer to ethereum-manager
-    // @todo: Create an action that sends encrypts password, also sends to cloud?
 
+    console.log("This is the password: " + this.state.passwordInput);
+
+    var litty = getNewMnemonic(this.state.passwordInput);
+
+    console.log("This is the mnemonic string: " + litty);
+
+    // @Todo: Dismiss -> this function currently lives in the WelcomeSreenContainer
   }
 
   render () {
     return (
-      <Form onSubmit={this.handleSubmit}>
+      <Form>
           <H2>
               Enter a username and password
           </H2>
@@ -79,9 +74,8 @@ export default class LoginForm extends Component {
               value={this.state.passwordInput}
               onChange={(e) => this.setState({passwordInput: e.target.value})}
           />
-          <Button>{"Let's go"}</Button>
+          <Button onClick={this.handleSubmit}>{"Let's go"}</Button>
           { /* @todo: Create New Button Class that actually saves the form field to the data base. */}
-
       </Form>
     );
   }
