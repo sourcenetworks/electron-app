@@ -47,7 +47,7 @@ export default class LoginForm extends Component {
 
     console.log("This is the password: " + this.state.passwordInput);
 
-    // var litty = getNewMnemonic(this.state.passwordInput);
+    var litty = getNewMnemonic(this.state.passwordInput);
 
     getProvider(this.state.passwordInput);
 
