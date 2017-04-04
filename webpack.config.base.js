@@ -10,13 +10,8 @@ module.exports = {
       test: /\.json$/,
       loader: 'json-loader',
     }, {
-<<<<<<< HEAD
       test: /\.(jpe?g|png|gif|svg)$/i,
       loader: 'file-loader?name=/static/img/[name].[ext]',
-=======
-      test: /\.(jpe?g|png|gif|svg)$/,
-      loader: 'url-loader',
->>>>>>> d4c9df5f613306303d5b656fa1d3a2759e66b1f0
     }, {
       test: /\.woff2$/,
       loader: 'url-loader',
