@@ -1,11 +1,7 @@
 import styled from 'styled-components';
 import React, { Component, PropTypes} from 'react';
 import Button from './Button.jsx';
-import { getNewMnemonic } from '../utils/walletUtils';
-
-const propTypes = {
-  dismiss: PropTypes.func.isRequired,
-}
+import { getNewMnemonic, getProvider } from '../utils/walletUtils';
 
 const H2 = styled.h2`
   margin-bottom: 10px;
@@ -46,11 +42,14 @@ export default class LoginForm extends Component {
   }
 
   handleSubmit(e) {
-    e.preventDefault();
+    // @todo: remove for testing purposes
+    // e.preventDefault();
 
     console.log("This is the password: " + this.state.passwordInput);
 
-    var litty = getNewMnemonic(this.state.passwordInput);
+    // var litty = getNewMnemonic(this.state.passwordInput);
+
+    getProvider(this.state.passwordInput);
 
     console.log("This is the mnemonic string: " + litty);
 
