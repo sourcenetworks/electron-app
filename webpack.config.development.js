@@ -13,7 +13,7 @@ config.entry = [
   './renderer/index.jsx',
 ];
 
-config.output.publicPath = 'http://localhost:3000/dist';
+config.output.publicPath = 'http://localhost:3000/dist/';
 
 config.module.loaders.push({
   test: /\.scss$/,

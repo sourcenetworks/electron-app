@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import React, { Component, PropTypes} from 'react';
 import Button from './Button.jsx';
+<<<<<<< HEAD
 // import { createKeyAndMnemonic } from '../actions/WalletActions';
 // const Source = require('@sourcenetworks/background-lib').default;
 import { genKeyLol } from '../utils/walletUtils';
@@ -9,6 +10,13 @@ const propTypes = {
   dismiss: PropTypes.func.isRequired,
 };
 // This is useless because it's being passed down from parent I would need to pass another thing
+=======
+import { getNewMnemonic } from '../utils/walletUtils';
+
+const propTypes = {
+  dismiss: PropTypes.func.isRequired,
+}
+>>>>>>> 9e0b070555800df96c2013a263c24cc82d405502
 
 const H2 = styled.h2`
   margin-bottom: 10px;
@@ -36,11 +44,14 @@ const Form = styled.form`
   background: white;
 `;
 
+<<<<<<< HEAD
 // const propTypes = {
 //     userNameInput: PropTypes.string,
 //     passwordInput: PropTypes.string
 // };
 
+=======
+>>>>>>> 9e0b070555800df96c2013a263c24cc82d405502
 export default class LoginForm extends Component {
 
   constructor(props){
@@ -56,6 +67,7 @@ export default class LoginForm extends Component {
   handleSubmit(e) {
     e.preventDefault();
 
+<<<<<<< HEAD
     var seed = genKeyLol(this.state.passwordInput);
     console.log("Hello " + seed);
     console.log("This is the username: " + this.state.userNameInput);
@@ -66,29 +78,39 @@ export default class LoginForm extends Component {
     // than I would have thought
 
     // Pull up the next screen
+=======
+    console.log("This is the password: " + this.state.passwordInput);
+
+    var litty = getNewMnemonic(this.state.passwordInput);
+
+    console.log("This is the mnemonic string: " + litty);
+
+    /* dismiss;*/
+
+    // @Todo: Dismiss -> this function currently lives in the WelcomeSreenContainer
+>>>>>>> 9e0b070555800df96c2013a263c24cc82d405502
   }
 
   render () {
     return (
-      <Form onSubmit={this.handleSubmit}>
+      <Form>
           <H2>
               Enter a username and password
           </H2>
           <Input
-              type="text"
-              placeholder="Bob"
-              value={this.state.usernameInput}
-              onChange={(e) => this.setState({usernameInput: e.target.value})}
+            type="text"
+            placeholder="Bob"
+            value={this.state.usernameInput}
+            onChange={(e) => this.setState({usernameInput: e.target.value})}
           />
           <Input
-              type="password"
-              placeholder="password"
-              value={this.state.passwordInput}
-              onChange={(e) => this.setState({passwordInput: e.target.value})}
+            type="password"
+            placeholder="password"
+            value={this.state.passwordInput}
+            onChange={(e) => this.setState({passwordInput: e.target.value})}
           />
-          <Button>{"Let's go"}</Button>
+          <Button onClick={this.handleSubmit}>{"Let's go"}</Button>
           { /* @todo: Create New Button Class that actually saves the form field to the data base. */}
-
       </Form>
     );
   }

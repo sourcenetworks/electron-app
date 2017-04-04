@@ -1,11 +1,13 @@
-const Promise = require('Bluebird');
-const promiseIpc = require('electron-promise-ipc').default;
+const Promise = require('bluebird');
 const Source = require('@sourcenetworks/background-lib').default;
+const promiseIpc = require('electron-promise-ipc').default;
 
-module.export = () => {
-
-    promiseIpc.on('genKeysFromPass', (password) =>
-        return Source.generateMnemonic(password)
-            .then(mnemonic => console.log(mnemonic));
-    });
+module.exports = (config) => {
+  promiseIpc.on('createAccount', (password) => {
+    return Source
+      .generateMnemonic()
+      .then(mnemonic => console.log(mnemonic));
+      // @todo: change getMnemonic to actually take a password
+      // should return a string with the 12 word mnemonic
+  });
 };

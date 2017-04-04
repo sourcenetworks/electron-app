@@ -1,13 +1,6 @@
+import promise from 'bluebird';
 import { ipcRenderer } from 'electron';
-import { CREATE_NEW_ACCOUNT } from '../actions/actionTypes';
-import { genKeyLol } from '../utils/walletUtils';
+import promiseIpc from 'electron-promise-ipc';
 
-export const createAcct = (password) = ({
-    type: CREATE_NEW_ACCOUNT,
-    promise: genKeyLol(password)
-});
-
-export function createKeyAndMnemonic(password) {
-    return createAcct(password);
-    // Because just returning an object???
-}
+// @todo: I know this related to redux -> but why doesn't
+// createAccount or getNewMnemonic work without Redux?
