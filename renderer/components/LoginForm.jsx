@@ -1,7 +1,14 @@
 import styled from 'styled-components';
 import React, { Component, PropTypes} from 'react';
 import Button from './Button.jsx';
+// import { createKeyAndMnemonic } from '../actions/WalletActions';
 // const Source = require('@sourcenetworks/background-lib').default;
+import { genKeyLol } from '../utils/walletUtils';
+
+const propTypes = {
+  dismiss: PropTypes.func.isRequired,
+};
+// This is useless because it's being passed down from parent I would need to pass another thing
 
 const H2 = styled.h2`
   margin-bottom: 10px;
@@ -48,17 +55,17 @@ export default class LoginForm extends Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    if (e/* Source.isNewUser()*/) {
-      // var newSeed = Source.generateMnemonic();
-      // console.log("This is the new seed you've gotten: " + newSeed(pass));
-      console.log("This is the username: " + this.state.userNameInput);
-      console.log("This is the password: " + this.state.passwordInput);
 
-    }
-    // @Todo: Dismiss
-    // Refer to ethereum-manager
-    // @todo: Create an action that sends encrypts password, also sends to cloud?
+    var seed = genKeyLol(this.state.passwordInput);
+    console.log("Hello " + seed);
+    console.log("This is the username: " + this.state.userNameInput);
+    console.log("This is the password: " + this.state.passwordInput);
 
+    // Object promise is not being called correctly ->
+    // newMnemonic is passing back a different object
+    // than I would have thought
+
+    // Pull up the next screen
   }
 
   render () {

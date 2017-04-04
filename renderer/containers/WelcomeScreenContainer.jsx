@@ -5,6 +5,8 @@ import * as screenNames from '../constants/screenNames';
 import * as ScreenActions from '../actions/ScreenActions';
 import WelcomeScreen from '../components/WelcomeScreen';
 
+// @todo: import * WalletActions from '../actions/WalletActions';
+
 function WelcomeScreenContainer({ screenActions }) {
   return (
     <WelcomeScreen
