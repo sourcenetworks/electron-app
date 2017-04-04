@@ -1,4 +1,4 @@
-import isRenderer from 'is-electron-renderer';
+import promiseIpc from 'electron-promise-ipc';
 
 export function getNewMnemonic(password) {
     // console.log('This is the password passed to walletUtils.getNewMnemonic ' + password);
